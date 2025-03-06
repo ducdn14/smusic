@@ -1,4 +1,4 @@
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/app/api/auth/auth.option";
 import { sendRequest } from "@/utils/api";
 import { Accordion, AccordionDetails, AccordionSummary, Box, Container, Divider, Typography } from "@mui/material";
 import { getServerSession } from "next-auth";

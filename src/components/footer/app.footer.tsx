@@ -6,6 +6,7 @@ import AppBar from '@mui/material/AppBar';
 import { useRef, useEffect } from 'react';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
+import "./app.footer.scss"
 
 
 const AppFooter = () => {
@@ -38,10 +39,11 @@ const AppFooter = () => {
                         }}
                     >
                         <Container
+                        className='track-info'
                             disableGutters
                             sx={{
                                 display: "flex",
-                                gap: 10,
+                                gap: '15px',
                                 ".rhap_main": {
                                     gap: "20px"
                                 }
@@ -50,7 +52,7 @@ const AppFooter = () => {
                                 ref={playerRef}
                                 layout='horizontal-reverse'
                                 src={`${process.env.NEXT_PUBLIC_BACKEND_URL}/tracks/${currentTrack.trackUrl}`}
-                                volume={0.5}
+                                volume={0.3}
                                 style={{
                                     boxShadow: "unset",
                                     background: "#f2f2f2"
@@ -69,7 +71,7 @@ const AppFooter = () => {
                                 justifyContent: "center",
                                 width: "220px",
                             }}>
-                                <div
+                                <div className='track-title'
                                     title={currentTrack.title}
                                     style={{
                                         width: "100%",
@@ -79,7 +81,7 @@ const AppFooter = () => {
                                         whiteSpace: "nowrap"
                                     }}
                                 >{currentTrack.title}</div>
-                                <div
+                                <div className='track-description'
                                     title={currentTrack.description}
                                     style={{
                                         width: "100%",

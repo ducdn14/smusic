@@ -1,4 +1,4 @@
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/app/api/auth/auth.option";
 import { convertSlugUrl, sendRequest } from "@/utils/api";
 import { Box, Divider } from "@mui/material";
 import Container from "@mui/material/Container";
@@ -35,7 +35,7 @@ const LikePage = async () => {
                 <h3>Hear the tracks you've liked:</h3>
             </div>
             <Divider />
-            <Box sx={{ mt: 3, display: "flex", gap: "20px", flexWrap: "wrap" }}>
+            <Box sx={{ mt: 3, display: "flex", gap: "14px", flexWrap: "wrap" }}>
                 {likes.map(track => {
                     return (
                         <Box key={track._id}>
@@ -43,8 +43,8 @@ const LikePage = async () => {
                                 style={{ borderRadius: "5px" }}
                                 alt="avatar track"
                                 src={`${process.env.NEXT_PUBLIC_BACKEND_URL}/images/${track?.imgUrl}`}
-                                height={200}
-                                width={200} />
+                                height={160}
+                                width={160} />
                             <div>
                                 <Link style={{
                                     textDecoration: "none",
@@ -53,7 +53,7 @@ const LikePage = async () => {
                                     href={`/track/${convertSlugUrl(track.title)}-${track._id}.html?audio=${track.trackUrl}`}>
                                     <span
                                         style={{
-                                            width: "200px",
+                                            width: "160px",
                                             display: "block",
                                             color: "black",
                                             overflow: "hidden",

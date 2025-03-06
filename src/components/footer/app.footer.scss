@@ -1,0 +1,15 @@
+@media (max-width: 768px) {
+    .track-info {
+
+        .track-title {
+            white-space: unset !important;
+        }
+
+        .rhap_container {
+
+            .rhap_horizontal-reverse {
+                flex-direction: column !important;
+            }
+        }
+    }
+}

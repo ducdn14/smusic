@@ -11,8 +11,6 @@ import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-import MailIcon from '@mui/icons-material/Mail';
-import NotificationsIcon from '@mui/icons-material/Notifications';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Link from 'next/link';
@@ -25,6 +23,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import QueueMusicIcon from '@mui/icons-material/QueueMusic';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
+import LoginIcon from '@mui/icons-material/Login';
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -99,16 +98,9 @@ export default function AppHeader() {
     const renderMenu = (
         <Menu
             anchorEl={anchorEl}
-            // anchorOrigin={{
-            //     vertical: 'top',
-            //     horizontal: 'right',
-            // }}
+
             id={menuId}
             keepMounted
-            // transformOrigin={{
-            //     vertical: 'top',
-            //     horizontal: 'right',
-            // }}
             open={isMenuOpen}
             onClose={handleMenuClose}
             transformOrigin={{ horizontal: 'right', vertical: 'top' }}
@@ -123,10 +115,12 @@ export default function AppHeader() {
                     Profile
                 </Link>
             </MenuItem>
+
             <MenuItem onClick={() => {
                 handleMenuClose();
                 signOut();
             }}>Logout</MenuItem>
+
         </Menu>
     );
 
@@ -147,7 +141,8 @@ export default function AppHeader() {
             open={isMobileMenuOpen}
             onClose={handleMobileMenuClose}
         >
-            <MenuItem>
+            <MenuItem
+                onClick={() => handleRedirectHome()}>
                 <IconButton
                     size="large"
                     aria-label="show 17 new notifications"
@@ -158,13 +153,7 @@ export default function AppHeader() {
                 >
                     <HomeIcon />
                 </IconButton>
-                <Link href={`/like`}
-                    style={{
-                        color: "unset",
-                        textDecoration: "unset"
-                    }}>
-                    Home
-                </Link>
+                Home
             </MenuItem>
             <MenuItem>
                 <IconButton size="large" aria-label="show 4 new mails" color="inherit"
@@ -219,21 +208,48 @@ export default function AppHeader() {
                     Upload
                 </Link>
             </MenuItem>
-            <MenuItem onClick={handleProfileMenuOpen}>
-                <IconButton
-                    size="large"
-                    aria-label="account of current user"
-                    aria-controls="primary-search-account-menu"
-                    aria-haspopup="true"
-                    color="inherit"
-                    sx={{
-                        color: "#FF5500"
-                    }}
-                >
-                    <AccountCircle />
-                </IconButton>
-                <p>Profile</p>
-            </MenuItem>
+            {session
+                ?
+                <>
+                    <MenuItem onClick={handleProfileMenuOpen}>
+                        <IconButton
+                            size="large"
+                            aria-label="account of current user"
+                            aria-controls="primary-search-account-menu"
+                            aria-haspopup="true"
+                            color="inherit"
+                            sx={{
+                                color: "#FF5500"
+                            }}
+                        >
+                            <AccountCircle />
+                        </IconButton>
+                        <p>Profile</p>
+                    </MenuItem>
+                </>
+                :
+                <>
+                    <MenuItem>
+                        <IconButton
+                            size="large"
+                            aria-label="show 17 new notifications"
+                            color="inherit"
+                            sx={{
+                                color: "#FF5500"
+                            }}
+                        >
+                            <LoginIcon />
+                        </IconButton>
+                        <Link href={`/auth/signin`}
+                            style={{
+                                color: "unset",
+                                textDecoration: "unset"
+                            }}>
+                            Sign in
+                        </Link>
+                    </MenuItem>
+                </>
+            }
         </Menu>
     );
 
@@ -312,7 +328,7 @@ export default function AppHeader() {
                                         />
                                     </>
                                     : <>
-                                        <Link href={"auth/signin"}>
+                                        <Link href={"/auth/signin"}>
                                             Login
                                         </Link>
                                     </>

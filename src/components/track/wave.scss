@@ -46,7 +46,7 @@
 
 .background-song {
     display: flex;
-    gap: 15;
+    gap: 15px;
     padding: 20px;
     height: 400px;
     background: linear-gradient(135deg, rgb(106, 112, 67) 0%, rgb(11, 15, 20) 100%);
@@ -60,34 +60,36 @@
 
         .info {
             display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
 
-            .button-play {
-                border-radius: 50%;
-                background: #f50;
-                height: 50px;
-                width: 50px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                cursor: pointer;
-            }
+        .button-play {
+            border-radius: 50%;
+            background: #f50;
+            height: 50px;
+            width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
 
-            .song-title {
-                padding: 0 5px;
-                background: #333;
-                font-size: 30px;
-                width: fit-content;
-                color: white;
-            }
+        .song-title {
+            padding: 0 5px;
+            background: #333;
+            font-size: 30px;
+            width: fit-content;
+            color: white;
+        }
 
-            .description {
-                padding: 0 5px;
-                margin-top: 10px;
-                background: #333;
-                font-size: 20px;
-                width: fit-content;
-                color: white;
-            }
+        .description {
+            padding: 0 5px;
+            margin-top: 10px;
+            background: #333;
+            font-size: 20px;
+            width: fit-content;
+            color: white;
         }
 
         .overlay {
@@ -95,19 +97,67 @@
             height: 30px;
             width: 100%;
             bottom: 0;
-            // background: "#ccc"
             backdrop-filter: brightness(0.5);
-        }
-
-        .comments {
-            
         }
     }
 
     .right {
-        width: 25%;
         padding: 15px;
         display: flex;
         align-items: center;
+    }
+
+    /* Media Query cho màn hình nhỏ */
+    @media (max-width: 768px) {
+        flex-direction: column-reverse;
+        height: auto;
+        gap: 10px;
+
+        .left {
+            width: 100%;
+            height: auto;
+
+            .info {
+                justify-content: center;
+                align-items: center;
+            }
+
+            .song-title {
+                font-size: 24px;
+            }
+
+            .description {
+                font-size: 16px;
+            }
+
+            .button-play {
+                height: 40px;
+                width: 40px;
+            }
+        }
+
+        .right {
+            width: 100%;
+            padding: 10px;
+            justify-content: center;
+        }
+
+    }
+
+    @media (max-width: 480px) {
+        padding: 15px;
+
+        .song-title {
+            font-size: 20px;
+        }
+
+        .description {
+            font-size: 14px;
+        }
+
+        .button-play {
+            height: 35px;
+            width: 35px;
+        }
     }
 }

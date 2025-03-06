@@ -154,7 +154,7 @@ const WaveTrack = (props: IProps) => {
     }
 
     return (
-        <div style={{ marginTop: 100 }}>
+        <div style={{ marginTop: 60 }}>
             <div className="background-song">
                 <div className="left">
                     <div className="info">

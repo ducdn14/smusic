@@ -1,5 +1,5 @@
-import { NextRequest, NextResponse } from 'next/server'
-import { revalidateTag } from 'next/cache'
+import { NextRequest, NextResponse } from 'next/server';
+import { revalidateTag } from 'next/cache';
 
 // e.g a webhook to `your-website.com/api/revalidate?tag=collection&secret=<token>`
 export async function POST(request: NextRequest) {

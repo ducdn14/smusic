@@ -8,6 +8,7 @@ import { ChevronLeft, ChevronRight } from "@mui/icons-material";
 import Link from "next/link";
 import { convertSlugUrl } from "@/utils/api";
 import Image from "next/image";
+import "./main.slider.scss"
 
 interface IProps {
     data: ITrackTop[],
@@ -23,8 +24,8 @@ const MainSlider = (props: IProps) => {
             <Button color="inherit" variant="contained" onClick={props.onClick}
                 sx={{
                     position: "absolute",
-                    left: 0,
-                    top: "50%",
+                    left: "-7%",
+                    top: "30%",
                     zIndex: 2,
                     minWidth: 30,
                     width: 35,
@@ -39,8 +40,8 @@ const MainSlider = (props: IProps) => {
             <Button color="inherit" variant="contained" onClick={props.onClick}
                 sx={{
                     position: "absolute",
-                    right: 0,
-                    top: "50%",
+                    right: "-7%",
+                    top: "30%",
                     zIndex: 2,
                     minWidth: 30,
                     width: 35,
@@ -88,13 +89,10 @@ const MainSlider = (props: IProps) => {
     };
     return (
         <Box sx={{
-            margin: "0 50px",
+            margin: "0 40px",
             ".track": {
-                padding: "0 10px",
-                "img": {
-                    height: 150,
-                    width: 150
-                }
+                padding: "0 20px",
+                
             },
             "h3": {
                 border: "1px solid #333",
@@ -107,7 +105,7 @@ const MainSlider = (props: IProps) => {
                 {data.map(track => {
                     return (
                         <div className="track" key={track._id}>
-                            <div style={{
+                            <div className="track-img" style={{
                                 position: 'relative',
                                 height: '150px',
                                 width: '150px',

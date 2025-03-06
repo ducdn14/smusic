@@ -81,8 +81,8 @@ const CommentTrack = (props: IProps) => {
                 <div className="left" style={{ width: "190px" }}>
                     <div>
                         <Image
-                            height={150}
-                            width={150}
+                            height={100}
+                            width={100}
                             alt="avatar-comment"
                             src={fetchDefaultImages(track?.uploader?.type!)} />
                         <div>{track?.uploader?.email}</div>

@@ -11,7 +11,7 @@ type Props = {
 }
 
 export async function generateMetadata(
-    { params }: Props,
+    { params, searchParams }: Props,
     parent: ResolvingMetadata
 ): Promise<Metadata> {
 
@@ -37,7 +37,7 @@ export async function generateMetadata(
     }
 }
 
-export async function generaterStaticParams() {
+export async function generateStaticParams() {
     return [
         { slug: 'thap-roi-tu-do-67be0476ad135c5c591d6316.html' },
         { slug: 'du-cho-tan-the-67bc30f82fd1d75aac95ce99.html' },
@@ -69,13 +69,17 @@ const DetailTrackPage = async (props: any) => {
             pageSize: 100,
             trackId: id,
             sort: "-createdAt"
+        },
+        nextOption: {
+            // cache: "no-store" 
+            next: { tags: ['track-comment'] }
         }
     })
 
-    await new Promise(resolve => setTimeout(resolve, 3000))
-
+    
     if (!res?.data) return notFound();
-
+    // await new Promise(resolve => setTimeout(resolve, 3000))
+    
     return (
         <Container>
             <div>

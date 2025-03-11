@@ -1,4 +1,13 @@
+import "./loading.scss"
+
 export default function Loading() {
-    
-    return <p>Loadinggg...</p>
+
+    return (
+        <div className="container">
+            <div className="loader">
+                <div className="loader-outter"></div>
+                <div className="loader-inner"></div>
+            </div>
+        </div>
+    )
 }

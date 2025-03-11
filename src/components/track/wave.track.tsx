@@ -63,6 +63,7 @@ const WaveTrack = (props: IProps) => {
             progressColor: progressGradient,
             height: 100,
             barWidth: 3,
+            // mediaControls: true,
             url: `/api?audio=${fileName}`
         }
     }, [])
@@ -164,7 +165,7 @@ const WaveTrack = (props: IProps) => {
                                     onPlayClick();
                                     handleIncreaseView();
                                     if (track && wavesurfer) {
-                                        setCurrentTrack({ ...currentTrack, isPlaying: false })
+                                        setCurrentTrack({ ...track, isPlaying: false })
                                     }
                                 }}
                             >

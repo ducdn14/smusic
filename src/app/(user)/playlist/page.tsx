@@ -44,6 +44,7 @@ const PlaylistPage = async () => {
     const playlists = res?.data?.result ?? [];
     const tracks = res1?.data?.result ?? [];
 
+    await new Promise(resolve => setTimeout(resolve, 5000)) 
     return (
         <Container sx={{
             mt: 3,

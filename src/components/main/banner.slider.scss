@@ -1,0 +1,17 @@
+@media (max-width: 1024px) {
+    .slide-container {
+        height: 40vh !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .slide-container {
+        height: 30vh !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .slide-container {
+        height: 20vh !important;
+    }
+}

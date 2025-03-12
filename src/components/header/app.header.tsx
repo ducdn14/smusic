@@ -261,16 +261,17 @@ export default function AppHeader() {
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static"
                 sx={{
-                    backgroundColor: "#333"
+                    backgroundColor: "#3080a3"
                 }}
             >
                 <Container>
                     <Toolbar>
                         <Typography
-                            variant="h6"
+                            variant="h5"
                             noWrap
                             component="div"
                             sx={{
+                                fontWeight: "bold",
                                 display: "block",
                                 minWidth: "70px",
                                 cursor: "pointer",
@@ -308,7 +309,7 @@ export default function AppHeader() {
                                 padding: "5px",
 
                                 "&.active": {
-                                    background: "#967840",
+                                    background: "#3cbcc2",
                                     borderRadius: "5px"
                                 }
                             }

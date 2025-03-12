@@ -1,6 +1,8 @@
 import MainSlider from "@/components/main/main.slider";
 import { Container } from "@mui/material";
 import { sendRequest } from "../../utils/api";
+import BannerSlider from "@/components/main/banner.slider";
+import SwiperSlider from "@/components/main/banner.swiper";
 
 export default async function HomePage() {
 
@@ -33,6 +35,7 @@ export default async function HomePage() {
 
   return (
     <Container>
+      <SwiperSlider />
       <MainSlider
         title={"Top Chill"}
         data={chills?.data ? chills.data : []}

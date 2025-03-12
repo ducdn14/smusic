@@ -105,7 +105,7 @@ const Step1 = (props: IProps) => {
 
 
     return (
-        <section className="container">
+        <section className="container-upload">
             <div {...getRootProps({ className: 'dropzone' })}>
                 <input {...getInputProps()} />
                 <InputFileUpload />

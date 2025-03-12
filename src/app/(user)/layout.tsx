@@ -1,7 +1,6 @@
 import AppHeader from '@/components/header/app.header';
 import AppFooter from "@/components/footer/app.footer";
 import Script from 'next/script';
-import BannerSlider from '@/components/main/banner.slider';
 
 const test = {
   "@context": "https://schema.org",
@@ -51,7 +50,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <>
       <AppHeader />
-      <BannerSlider />
       {children}
       <div style={{ marginBottom: '100px' }}></div>
       <AppFooter />

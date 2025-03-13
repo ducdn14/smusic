@@ -1,12 +1,11 @@
-### Mô tả dự án
-# Giới thiệu
+## Giới thiệu
 Trang web nghe nhạc trực tuyến, ý tưởng dựa trên SoundCloud có các tính năng như:
 - Nghe nhạc với: audio track ở footer, wavetrack khi xem chi tiết.
 - Tải lên bài hát mới.
 - Bình luận theo thời gian của wavetrack.
 - Tạo danh sách phát, like/dislike bài hát.
   
-# Công nghệ sử dụng
+## Công nghệ sử dụng
 Next.js + MUI + TypeScript
 
 # Các bước để bắt đầu khởi chạy dự án:

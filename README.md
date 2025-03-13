@@ -8,7 +8,7 @@ Trang web nghe nhạc trực tuyến, ý tưởng dựa trên SoundCloud có cá
 ## Công nghệ sử dụng
 Next.js + MUI + TypeScript
 
-# Các bước để bắt đầu khởi chạy dự án:
+## Các bước để bắt đầu khởi chạy dự án:
 1. Clone dự án
 2. Cài đặt các thư viện cần thiết: npm i
 3. Cập nhật file .env
